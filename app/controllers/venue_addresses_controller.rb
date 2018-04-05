@@ -1,6 +1,7 @@
 class VenueAddressesController < ApplicationController
   def index
-    @venue_addresses = VenueAddress.page(params[:page]).per(10)
+    @q = VenueAddress.ransack(params[:q])
+    @venue_addresses = @q.result(:distinct => true).includes(:venue).page(params[:page]).per(10)
 
     render("venue_addresses/index.html.erb")
   end
