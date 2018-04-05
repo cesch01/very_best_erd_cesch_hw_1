@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :venues_with_bookmarked_items,
+             :through => :bookmarked_dishes,
+             :source => :venue
+
   # Validations
 
   # Include default devise modules. Others available are:
