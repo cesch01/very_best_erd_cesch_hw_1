@@ -9,7 +9,13 @@
       <dd><%= @venue.name %></dd>
 
       <dt>Address</dt>
-      <dd><%= @venue.address_id %></dd>
+      <dd>
+        <% if @venue.address.present? %>
+          <a href="/venue_addresses/<%= @venue.address_id %>">
+            <%= @venue.address.address %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

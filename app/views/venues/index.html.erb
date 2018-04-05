@@ -17,7 +17,13 @@
       <% @venues.each do |venue| %>
       <tr>
         <td><%= venue.name %></td>
-        <td><%= venue.address.address %></td>
+        <td>
+          <% if venue.address.present? %>
+            <a href="/venue_addresses/<%= venue.address.id %>">
+              <%= venue.address.address %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
           <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>
