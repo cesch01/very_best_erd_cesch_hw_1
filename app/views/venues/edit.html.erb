@@ -33,7 +33,7 @@
           Address
         </label>
 
-        <input type="text" id="address_id" name="address_id" placeholder="Address" class="form-control" value="<%= @venue.address_id %>">
+        <%= select_tag(:address_id, options_from_collection_for_select(VenueAddress.all, :id, :address, @venue.address_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
