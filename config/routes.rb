@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "dishes#index"
   # Routes for the Cuisine_type resource:
   # CREATE
   get "/cuisine_types/new", :controller => "cuisine_types", :action => "new"
