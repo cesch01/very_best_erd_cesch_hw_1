@@ -10,6 +10,10 @@ class Dish < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :lovers_of_dish,
+             :through => :accumulated_bookmarks,
+             :source => :user
+
   # Validations
 
 end
