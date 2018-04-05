@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Cuisine_type resource:
+  # CREATE
+  get "/cuisine_types/new", :controller => "cuisine_types", :action => "new"
+  post "/create_cuisine_type", :controller => "cuisine_types", :action => "create"
+
+  # READ
+  get "/cuisine_types", :controller => "cuisine_types", :action => "index"
+  get "/cuisine_types/:id", :controller => "cuisine_types", :action => "show"
+
+  # UPDATE
+  get "/cuisine_types/:id/edit", :controller => "cuisine_types", :action => "edit"
+  post "/update_cuisine_type/:id", :controller => "cuisine_types", :action => "update"
+
+  # DELETE
+  get "/delete_cuisine_type/:id", :controller => "cuisine_types", :action => "destroy"
+  #------------------------------
+
   # Routes for the Bookmark resource:
   # CREATE
   get "/bookmarks/new", :controller => "bookmarks", :action => "new"
