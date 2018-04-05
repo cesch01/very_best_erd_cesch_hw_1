@@ -1,6 +1,9 @@
 class Bookmark < ApplicationRecord
   # Direct associations
 
+  belongs_to :venue,
+             :counter_cache => :bookmarked_dishes_count
+
   belongs_to :specific_dish,
              :class_name => "Dish",
              :foreign_key => "dish_id",
