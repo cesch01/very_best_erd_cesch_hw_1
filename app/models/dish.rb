@@ -4,6 +4,10 @@ class Dish < ApplicationRecord
   belongs_to :cusine,
              :class_name => "CuisineType"
 
+  belongs_to :venue,
+             :required => false,
+             :counter_cache => true
+
   has_many   :accumulated_bookmarks,
              :class_name => "Bookmark",
              :dependent => :destroy
