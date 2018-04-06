@@ -9,7 +9,13 @@
       <dd><%= @dish.dish_name %></dd>
 
       <dt>Venue</dt>
-      <dd><%= @dish.venue_id %></dd>
+      <dd>
+        <% if @dish.venue.present? %>
+          <a href="/venues/<%= @dish.venue_id %>">
+            <%= @dish.venue.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Cusine</dt>
       <dd>
@@ -105,7 +111,7 @@
       <% @dish.lovers_of_dish.each do |user| %>
         <li class="list-group-item">
           <a href="/users/<%= user.id %>">
-            <%= user.email %>
+            <%= user.name %>
           </a>
           <div class="btn-group btn-group-xs pull-right">
             <a href="/users/<%= user.id %>" class="btn btn-primary">

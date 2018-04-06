@@ -4,6 +4,9 @@ class Venue < ApplicationRecord
   belongs_to :address,
              :class_name => "VenueAddress"
 
+  has_many   :dishes,
+             :dependent => :nullify
+
   has_many   :bookmarked_dishes,
              :class_name => "Bookmark",
              :dependent => :destroy
