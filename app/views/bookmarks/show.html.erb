@@ -9,7 +9,7 @@
       <dd>
         <% if @bookmark.user.present? %>
           <a href="/users/<%= @bookmark.user_id %>">
-            <%= @bookmark.user.email %>
+            <%= @bookmark.user.name %>
           </a>
         <% end %>
       </dd>
